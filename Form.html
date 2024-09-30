@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Form</title>
+</head>
+<body>
+    <form action="/submit" method="post" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Contact Information:</legend>
+
+            <!-- User First Name -->
+            <label for="FName">First Name:</label>
+            <input type="text" id="FName" name="fName" placeholder="First name" required><br><br>
+
+            <!-- User Last Name -->
+            <label for="LName">Last Name:</label>
+            <input type="text" id="LName" name="LName" placeholder="Last name" required><br><br>
+
+            <!-- Email -->
+            <label for="Email">Email:</label>
+            <input type="Email" id="Email" name="Email" placeholder="Email" required><br><br>
+
+            <!-- Phone -->
+            <label for="Telephone">Telephone:</label>
+            <input type="Tel" id="phone" name="Phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Telephone" required><br><br>
+
+            <!-- Preferred Contact Method (Dropdown) -->
+            <label for="PreferredContact">Preferred contact method:</label>
+            <select id="PreferredContact" name="referredContact" required>
+                <option value="" disabled selected>Select an option</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone</option>
+                <option value="either">Either</option>
+            </select><br><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Feedback:</legend>
+
+            <!-- Subject -->
+            <label for="Subject">Message subject:</label>
+            <input type="Text" id="Subject" name="subject" placeholder="Message Subject" required><br><br>
+
+            <!-- Message Box -->
+            <textarea id="Message" name="Message" rows="10" cols="50" placeholder="Type your message here..." required></textarea><br><br>
+
+            <!-- File Attachment -->
+            <label for="File">Attach a file:</label>
+            <input type="File" id="File" name="File"><br><br>
+			<hr>
+			<!-- Submit Button -->
+			<input type="submit" value="Send">	
+		</fieldset>
+    </form>
+</body>
+</html>
