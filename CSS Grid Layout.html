@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid </title>
+    <style>
+        /* Main page style */
+        body {
+            background-color: lightblue;
+            font-family: 'Arial', sans-serif;
+            font-size: 1.2em;
+            color: #333; /* Font color */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+	
+
+        /* Create the Centering content */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Grid container settings */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
+            gap: 20px; /* Space between grid items */
+            padding: 30px;
+            background-color: #276785; /* strong blue background */
+            font-family: Verdana, sans-serif;
+            text-align: center;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Grid item settings */
+        .grid-item {
+            background-color:#f2f2f2;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            font-size: 1.1em;
+			color: #9C0063
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* Hover effect on grid items */
+        .grid-item:hover {
+            transform: translateY(-5px); /* Slight lift on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+        }
+
+        /* Responsive grid settings */
+        @media (max-width: 900px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+            }
+        }
+
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: 1fr; /* 1 column for small screens */
+            }
+        }
+
+        /* Image settings */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Hover effect on images */
+        img:hover {
+            transform: scale(1.05); /* Zoom effect on hover */
+        }
+
+        /* Styling for the header */
+        header {
+            padding: 20px;
+            text-align: center;
+            background-color:  #335; /* blue magenta for the header */
+            color: white;
+            width: 100%;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+			
+        }
+        h2 {
+            font-size: 1.4em;
+            color:  #9C0063;
+            margin-bottom: 10px;
+		}
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0;
+		}	
+
+        /* List styling */
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 5px 0;
+        }
+
+    </style>
+</head>
+<body>
+<div id="example1">
+    <!-- Header section -->
+    <header>
+        <h1>CSS Grid Layout</h1>
+        <p>This page uses CSS Grid to create a responsive layout. As you resize the screen, the layout will adjust from three columns to two or even one, depending on the screen size.</p>
+    </header>
+
+    <!-- Container to center everything -->
+    <div class="container">
+        <!-- Grid Layout Section -->
+        <section class="grid-container">
+            <!-- Text Content Block -->
+            <article class="grid-item">
+                <h2>What is CSS Grid?</h2>
+                <p>CSS grid creates complex responsive web design grid layouts more easily and consistently across browsers.</p>
+            </article>
+
+            <!-- Image Block -->
+            <div class="grid-item">
+                <h2>Grid Image Example</h2>
+                <img src="Img1.jpg" alt="Cinque Terre">
+                <p>This image is inside a grid item and will adjust its size to fit the grid container.</p>
+            </div>
+
+            <!-- Text Block -->
+            <article class="grid-item">
+                <h2>Responsive Design</h2>
+                <p>The grid layout is responsive, meaning it automatically adjusts based on screen size. It starts as a 3-column layout on large screens, changes to 2 columns on medium screens, and stacks into a single column on small screens like phones.</p>
+            </article>
+
+            <!-- Image Block -->
+            <div class="grid-item">
+                <h2>Another Image</h2>
+                <img src="img_forest.jpg" alt="Forest">
+                <p>Grid allows easy management of multiple types of content, such as images and text.</p>
+            </div>
+
+            <!-- Settings Block -->
+            <article class="grid-item">
+                <h2>Settings</h2>
+                <p>
+                    Settings & their effects include:
+                    <ul>
+                        <li><strong>Grid-template-columns:</strong> Defines the number and size of columns in the grid. Example: <code>grid-template-columns: repeat(3, 1fr);</code> creates 3 equal columns.</li>
+                        <li><strong>Grid-gap:</strong> Controls the space between grid items. Example: <code>gap: 20px;</code> creates 20px of space between each item.</li>
+                        <li><strong>Media queries:</strong> Adjust the grid layout for different screen sizes.</li>
+                    </ul>
+                </p>
+            </article>
+
+            <!-- Key Features Block -->
+            <article class="grid-item">
+                <h2>Key Features</h2>
+                <p>
+                    Key features of CSS Grid include:
+                    <ul>
+                        <li><strong>Auto-placement:</strong> Grid items are automatically placed in the next available cell unless explicitly positioned.</li>
+                        <li><strong>Responsive design:</strong> Media queries adjust the grid layout dynamically based on screen width.</li>
+                        <li><strong>Aligning items:</strong> Use <code>align-items</code> or <code>justify-items</code> to center, stretch, or align content within grid cells.</li>
+                        <li><strong>Span items:</strong> Use <code>grid-column</code> or <code>grid-row</code> to make items span multiple columns or rows.</li>
+                    </ul>
+                </p>
+            </article>
+        </section>
+    </div>
+
+</body>
+</html>
