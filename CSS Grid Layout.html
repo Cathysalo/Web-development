@@ -10,12 +10,88 @@
             background-color: lightblue;
             font-family: 'Arial', sans-serif;
             font-size: 1.2em;
+			text-align: center;
             color: #333; /* Font color */
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-	
+		/* Grid-based Menu */
+        .menu-bar {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 equal-width columns */
+            background-color: #333; /* Dark background */
+            padding: 10px 0;
+            text-align: center;
+            position: relative; /* For dropdown positioning */
+        }
+
+        .menu-bar a {
+            color: white;
+            padding: 14px 0;
+            text-decoration: none;
+            font-size: 18px;
+            position: relative; /* For dropdown arrow */
+        }
+
+        .menu-bar i {
+            font-size: 24px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .menu-bar a:hover {
+            background-color: #575757; /* Darker grey on hover */
+        }
+
+        /* Dropdown Menu for Projects */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown a::after {
+            content: ' ▼'; /* Add dropdown arrow */
+            font-size: 12px;
+            margin-left: 5px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            left: 50%; /* Center dropdown under Projects */
+            transform: translateX(-50%);
+        }
+
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        /* Responsive design for smaller screens */
+        @media (max-width: 768px) {
+            .menu-bar {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+			 }
+	   }
+		
+        @media (max-width: 500px) {
+            .menu-bar {
+                grid-template-columns: 1fr; /* 1 column on small screens */
+            }
+        }
+
+        /* Styling content section */
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
 
         /* Create the Centering content */
         .container {
@@ -82,10 +158,9 @@
             transform: scale(1.05); /* Zoom effect on hover */
         }
 
-        /* Styling for the header */
+        /* Header Styling*/
         header {
             padding: 20px;
-            text-align: center;
             background-color:  #335; /* blue magenta for the header */
             color: white;
             width: 100%;
@@ -100,6 +175,7 @@
             font-size: 1.4em;
             color:  #9C0063;
             margin-bottom: 10px;
+			
 		}
         header p {
             font-size: 1.2em;
@@ -119,6 +195,31 @@
     </style>
 </head>
 <body>
+ <!-- Grid-based Menu -->
+    <nav class="menu-bar">
+        <a href="#home">
+            <i class="fas fa-home"></i> <!-- Home Icon -->
+            Home
+        </a>
+        <a href="#about-me">
+            <i class="fas fa-user"></i> <!-- About Me Icon -->
+            About Me
+        </a>
+        <div class="dropdown">
+            <a href="#projects">
+                <i class="fas fa-folder-open"></i> <!-- Projects Icon -->
+                Projects
+            </a>
+            <div class="dropdown-content">
+                <a href="#school-projects">School Projects</a>
+                <a href="#personal-projects">Personal Projects</a>
+            </div>
+        </div>
+        <a href="#contact-me">
+            <i class="fas fa-envelope"></i> <!-- Contact Me Icon -->
+            Contact Me
+        </a>
+    </nav>
 <div id="example1">
     <!-- Header section -->
     <header>
@@ -126,7 +227,7 @@
         <p>This page uses CSS Grid to create a responsive layout. As you resize the screen, the layout will adjust from three columns to two or even one, depending on the screen size.</p>
     </header>
 
-    <!-- Container to center everything -->
+    <!-- Container -->
     <div class="container">
         <!-- Grid Layout Section -->
         <section class="grid-container">
@@ -183,7 +284,6 @@
                 </p>
             </article>
         </section>
-    </div>
-
+    </div>	
 </body>
 </html>
