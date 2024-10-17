@@ -1,70 +1,126 @@
 <!DOCTYPE html>
-<html lang = "en">
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Fixed-width Layout with Right Sidebar</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My HTML Page</title>
+        /* Body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Wrapper to hold content and set fixed width */
+        .container {
+            width: 960px; /* Fixed width for the page */
+            margin: 0 auto; /* Center the container */
+            background-color: white; /* White background for the content */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow around container */
+        }
+
+        /* Header styling */
+        .header {
+            background-color: gray;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            float: right; /* Move the sidebar to the right */
+            width: 250px; /* Fixed width for the sidebar */
+            background-color: lightblue;
+            padding: 15px;
+        }
+
+        /* Main content styling */
+        .main-content {
+            margin-right: 270px; /* Ensure the main content does not flow under the sidebar */
+            padding: 15px;
+            background-color:lightgrey;
+        }
+
+        /* Footer styling */
+        .footer {
+            background-color: gray;
+            color: white;
+            text-align: left;
+            padding: 10px 0;
+            clear: both; /* Clear any floating elements */
+        }
+
+        /* Paragraph styling */
+        p {
+            margin-bottom: 20px;
+        }
+
+    </style>
 </head>
 <body>
-	<! -- Headings -->		
-<h1> Welcome to my HTML Page </h1>
 
-<h2> Subheading</h2>
-	
-<!-- Paragraph -->
-<p> This is a simple paragraph on my HTML page. </p>
-<!-- Unordered list -->
-<ul>
-	<li>List Item 1 </li>
-<ul>
-		<li>List Item 1.1 </li>
-		<li>List Item 1.2 </li>
-</ul
-<ul>	
-	<li>List Item 2 </li>
-	<li>List Item 3 </li>
-	
-</ul>
-<!-- Table -->
-<table border ="1">
-	<caption>Table 1.</caption>
-	<thead>
-	<tr>
-		<th>Column 1</th>
-		<th>Column 2</th>
-		<th>Column 3</th>
-	</tr>	
-	</thead>
-	
-	
-	<tbody>
-	<tr>
-		<td> Cell 1 </td>
-		<td> Cell 2 </td>
-		<td> Cell 3 </td>
-	</tr>
-	<tr>
-		<td> Cell 4 </td>
-		<td> Cell 5 </td>
-		<td> Cell 6 </td>	
-	</tr>
-		</tbody>
-	</table><br>
+    <!-- Main Container -->
+    <div class="container">
 
-<!-- Form -->
-<form method="post">
-		<label for ="username"> Username:</label>
-		<input type= "text" id=" username" name="username"><br><br>
-	
-		<label for="password"> Password:</label>
-		<input type="password" id="password" name="password"><br><br>
-	
-		<input type="submit" value="Submit">	
-</form>	
-	
+        <!-- Header Section -->
+        <div class="header">
+            <h1>2 column fixed</h1>
+        </div>
+
+        <!-- Sidebar Section -->
+        <div class="sidebar">
+            <h3>Sidebar Content</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris, non consectetur eros. Vestibulum ut orci ac nulla dignissim viverra Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris, non consectetur eros. Vestibulum ut orci ac nulla dignissim viverra.</p>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="main-content">
+            <h2>Main Content </h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris, non consectetur eros. Vestibulum ut orci ac nulla dignissim viverraLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris, non consectetur eros. Vestibulum ut orci ac nulla dignissim viverra.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris, non consectetur eros. Vestibulum ut orci ac nulla dignissim viverraLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris, non consectetur eros. Vestibulum ut orci ac nulla dignissim viverra.
+            </p>
+
+            <h2>H2 Level heading</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris, non consectetur eros. Vestibulum ut orci ac nulla dignissim viverraLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris, non consectetur eros. Vestibulum ut orci ac nulla dignissim viverra.
+            </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris, non consectetur eros. Vestibulum ut orci ac nulla dignissim viverraLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris, non consectetur eros. Vestibulum ut orci ac nulla dignissim viverra.
+            </p>
+        </div>
+
+        <!-- Clear Floats to Fix Footer Position -->
+        <div class="clearfloat"></div>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <p>&copy; 2024 Made by Cathy </p>
+        </div>
+
+    </div>
+
 </body>
-
 </html>
-		
